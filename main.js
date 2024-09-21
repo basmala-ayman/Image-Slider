@@ -55,8 +55,8 @@ function reloadSlider() {
 slider.addEventListener('mouseover', stopInterval);
 slider.addEventListener('mouseout', reloadSlider);
 
-window.onload = reloadSlider();
-window.onresize = reloadSlider();
+window.onload = reloadSlider;
+window.onresize = reloadSlider;
 
 listItems.forEach((li, key) => {
     li.addEventListener('click', () => {
