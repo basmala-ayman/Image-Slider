@@ -1,90 +1,75 @@
 // images' path
 let imgPath = [
-    "./images/see.jpg",
-    "./images/Aqsaa.webp",
-    "./images/aqsa.jpg",
-    "./images/Ashdod.jpeg",
-    "./images/yafa_city.webp"
+    // "./images/see.jpg",
+    // "./images/Aqsaa.webp",
+    // "./images/aqsa.jpg",
+    // "./images/Ashdod.jpeg",
+    // "./images/yafa_city.webp",
+    "./images/1.jpg",
+    "./images/2.jpg",
+    "./images/3.jpg",
+    "./images/4.jpg",
+    "./images/5.jpg",
 ];
+let slider = document.getElementById("slider");
+let pagination = document.querySelector("#pagination ul");
+let nextArrow = document.getElementById("next");
+let prevArrow = document.getElementById("prev");
+let active = 0;
+let interval = 3500;
 
-let imgs = [];
+// set all images in slider
 for (let i = 0; i < imgPath.length; i++) {
     let img = document.createElement("img");
     img.src = imgPath[i];
-    img.setAttribute('data-counter', i + 1);
-    imgs.push(img);
+    slider.appendChild(img);
+}
+let images = document.querySelectorAll(".slider img");
+
+// create pagination li
+for (let i = 0; i < images.length; i++) {
+    pagination.appendChild(document.createElement('li'));
 }
 
-let slider = document.getElementById("slider");
-let nextArrow = document.getElementById("next");
-let prevArrow = document.getElementById("prev");
+let listItems = document.querySelectorAll('#pagination ul li');
 
-function setImage(counter) {
-    slider.innerHTML = "";
-    let currentImg = imgs[counter - 1];
-    currentImg.classList.add('active');
-    slider.appendChild(currentImg);
+function removeAndSetActive() {
+    listItems.forEach((ele) => {
+        ele.classList.remove('active');
+    })
+    listItems[active].classList.add('active');
 }
-
-// check first image, last image
-function checkDisabled(counter) {
-    if (counter == 1) {
-        prevArrow.classList.add('disabled');
-    } else {
-        prevArrow.classList.remove('disabled');
-    }
-    if (counter == 5) {
-        nextArrow.classList.add('disabled');
-    } else {
-        nextArrow.classList.remove('disabled');
-    }
-}
-
-function nextSlide() {
-    let counter = parseInt(slider.firstChild.getAttribute('data-counter')); // 5
-    if (counter == 5) {
-        return;
-    }
-    setImage(counter + 1);
-    checkDisabled(counter + 1)
-}
-
-function lastSlide() {
-    let counter = parseInt(slider.firstChild.getAttribute('data-counter')); // 1
-    if (counter == 1) {
-        return;
-    }
-    setImage(counter - 1);
-    checkDisabled(counter - 1);
-}
-
-// set first image as a beginning image
-// setImage(defaultImg);
-
-let defaultImg = 1;
 
 let sliderInterval;
-function startInterval() {
-    sliderInterval = setInterval(() => {
-        setImage(++defaultImg);
-        checkDisabled(defaultImg);
-        if (defaultImg == imgPath.length) {
-            defaultImg = 0;
-        }
-    }, 2000);
-}
-setImage(defaultImg);
-startInterval();
 function stopInterval() {
-    clearInterval(sliderInterval);
+    clearInterval(sliderInterval)
+
+}
+function reloadSlider() {
+    slider.style.left = -images[active].offsetLeft + 'px';
+    removeAndSetActive();
+    clearInterval(sliderInterval)
+    sliderInterval = setInterval(() => nextArrow.click(), interval)
 }
 
-slider.addEventListener('mouseout', startInterval);
 slider.addEventListener('mouseover', stopInterval);
+slider.addEventListener('mouseout', reloadSlider);
 
-// motion between images
-// next image
-nextArrow.addEventListener('click', nextSlide);
+window.onload = reloadSlider();
+window.onresize = reloadSlider();
 
-// previous image
-prevArrow.addEventListener('click', lastSlide);
+listItems.forEach((li, key) => {
+    li.addEventListener('click', () => {
+        active = key;
+        reloadSlider();
+    })
+})
+
+nextArrow.onclick = function () {
+    active = active == images.length - 1 ? 0 : active + 1;
+    reloadSlider();
+}
+prevArrow.onclick = function () {
+    active = active == 0 ? images.length - 1 : active - 1;
+    reloadSlider();
+}
