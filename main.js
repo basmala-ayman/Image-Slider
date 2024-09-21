@@ -1,10 +1,10 @@
 // images' path
 let imgPath = [
-    // "./images/see.jpg",
-    // "./images/Aqsaa.webp",
-    // "./images/aqsa.jpg",
-    // "./images/Ashdod.jpeg",
-    // "./images/yafa_city.webp",
+    "./images/see.jpg",
+    "./images/Aqsaa.webp",
+    "./images/aqsa.jpg",
+    "./images/Ashdod.jpeg",
+    "./images/yafa_city.webp",
     "./images/1.jpg",
     "./images/2.jpg",
     "./images/3.jpg",
