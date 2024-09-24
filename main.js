@@ -52,6 +52,7 @@ function displayData() {
     setTimeout(() => data.innerHTML = `${active + 1} / ${imgPath.length}`, 900);
 }
 
+// update the slider
 function reloadSlider() {
     slider.style.left = -images[active].offsetLeft + 'px';
     removeAndSetActive();
@@ -61,8 +62,37 @@ function reloadSlider() {
     }, interval)
 }
 
+// swiping on touch screen
+let startX = 0;
+let startY = 0;
+let acceptDist = 60; // minimum distance to swipe
 
-// start slider
+function swiping(distX, distY) {
+    if (Math.abs(distX) > Math.abs(distY)) {
+        if (distX > acceptDist) {
+            // swiping to the right means move to the previous image
+            prevArrow.click();
+        } else if (distX < -acceptDist) {
+            // swiping to the left means move to the next image
+            nextArrow.click();
+        }
+    }
+}
+
+slider.addEventListener('touchstart', function (event) {
+    let startPoint = event.touches[0];
+    startX = startPoint.clientX;
+    startY = startPoint.clientY;
+})
+
+slider.addEventListener('touchend', function (event) {
+    let endPoint = event.changedTouches[0];
+    let distX = endPoint.clientX - startX;
+    let distY = endPoint.clientY - startY;
+    swiping(distX, distY);
+})
+
+// start slider motion
 window.onload = reloadSlider;
 window.onresize = reloadSlider;
 
