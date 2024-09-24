@@ -43,8 +43,8 @@ function removeAndSetActive() {
 let sliderInterval;
 function stopInterval() {
     clearInterval(sliderInterval)
-
 }
+
 function reloadSlider() {
     slider.style.left = -images[active].offsetLeft + 'px';
     removeAndSetActive();
