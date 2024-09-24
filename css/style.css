@@ -31,6 +31,19 @@
     object-fit: cover;
 }
 
+.slider-container .data {
+    margin: 10px 0 0 10px;
+    padding: 8px 15px;
+    width: fit-content;
+    color: white;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+
 .slider-container .move {
     display: flex;
     justify-content: space-between;

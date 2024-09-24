@@ -17,6 +17,8 @@ let nextArrow = document.getElementById("next");
 let prevArrow = document.getElementById("prev");
 let active = 0;
 let interval = 3500;
+let data = document.getElementById('data');
+data.innerHTML = `${active + 1} / ${imgPath.length}`;
 
 // set all images in slider
 for (let i = 0; i < imgPath.length; i++) {
@@ -45,11 +47,18 @@ function stopInterval() {
     clearInterval(sliderInterval)
 }
 
+// display the counter of image
+function displayData() {
+    setTimeout(() => data.innerHTML = `${active + 1} / ${imgPath.length}`, 900);
+}
+
 function reloadSlider() {
     slider.style.left = -images[active].offsetLeft + 'px';
     removeAndSetActive();
     clearInterval(sliderInterval)
-    sliderInterval = setInterval(() => nextArrow.click(), interval)
+    sliderInterval = setInterval(() => {
+        nextArrow.click();
+    }, interval)
 }
 
 slider.addEventListener('mouseover', stopInterval);
@@ -61,15 +70,18 @@ window.onresize = reloadSlider;
 listItems.forEach((li, key) => {
     li.addEventListener('click', () => {
         active = key;
+        displayData();
         reloadSlider();
     })
 })
 
 nextArrow.onclick = function () {
     active = active == images.length - 1 ? 0 : active + 1;
+    displayData();
     reloadSlider();
 }
 prevArrow.onclick = function () {
     active = active == 0 ? images.length - 1 : active - 1;
+    displayData();
     reloadSlider();
 }
