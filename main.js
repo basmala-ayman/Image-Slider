@@ -11,6 +11,7 @@ let imgPath = [
     "./images/4.jpg",
     "./images/5.jpg",
 ];
+// get elements
 let slider = document.getElementById("slider");
 let pagination = document.querySelector("#pagination ul");
 let nextArrow = document.getElementById("next");

@@ -121,8 +121,7 @@
     transition: 1s;
 }
 
-.slider-container .pagination ul li.active,
-.slider-container .pagination ul li:hover {
+.slider-container .pagination ul li.active {
     background-color: #fff;
 }
 
