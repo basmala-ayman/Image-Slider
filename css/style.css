@@ -36,6 +36,8 @@
 }
 
 .slider-container .data {
+    position: absolute;
+    z-index: 5;
     margin: 10px 0 0 10px;
     padding: 8px 15px;
     width: fit-content;
@@ -45,6 +47,7 @@
     backdrop-filter: blur(12px);
     border-radius: 8px;
     border: 1px solid var(--main-color);
+    user-select: none;
 }
 
 @media (max-width: 399px) {
