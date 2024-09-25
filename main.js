@@ -68,6 +68,7 @@ function reloadSlider() {
 let startX = 0;
 let startY = 0;
 let acceptDist = 50; // minimum distance to swipe
+let isHorizontalSwipe = false;
 
 function swiping(distX, distY) {
     if (Math.abs(distX) > Math.abs(distY)) {
@@ -85,7 +86,27 @@ slider.addEventListener('touchstart', function (event) {
     let startPoint = event.touches[0];
     startX = startPoint.clientX;
     startY = startPoint.clientY;
+    isHorizontalSwipe = false;
 })
+
+// Listen for movement during touch
+swipeArea.addEventListener('touchmove', function (e) {
+    const touch = e.touches[0];
+    let distX = touch.clientX - startX;
+    let distY = touch.clientY - startY;
+
+    // Determine the swipe direction after small movement
+    if (!isHorizontalSwipe && Math.abs(distX) > Math.abs(distY)) {
+        // If horizontal movement is greater than vertical, it's a horizontal swipe
+        isHorizontalSwipe = true;
+    }
+
+    // If it's a horizontal swipe, prevent vertical scrolling
+    if (isHorizontalSwipe) {
+        e.preventDefault();  // Prevent vertical motion (scrolling)
+    }
+});
+
 
 slider.addEventListener('touchend', function (event) {
     let endPoint = event.changedTouches[0];
