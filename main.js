@@ -71,7 +71,7 @@ let acceptDist = 50; // minimum distance to swipe
 let isHorizontalSwipe = false;
 
 function swiping(distX, distY) {
-    if (Math.abs(distX) > Math.abs(distY)) {
+    if (isHorizontalSwipe) {
         if (distX > acceptDist) {
             // swiping to the right means move to the previous image
             prevArrow.click();
@@ -90,7 +90,7 @@ slider.addEventListener('touchstart', function (event) {
 })
 
 // Listen for movement during touch
-swipeArea.addEventListener('touchmove', function (e) {
+slider.addEventListener('touchmove', function (e) {
     const touch = e.touches[0];
     let distX = touch.clientX - startX;
     let distY = touch.clientY - startY;
