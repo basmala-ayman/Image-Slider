@@ -67,7 +67,7 @@ function reloadSlider() {
 // swiping on touch screen
 let startX = 0;
 let startY = 0;
-let acceptDist = 60; // minimum distance to swipe
+let acceptDist = 50; // minimum distance to swipe
 
 function swiping(distX, distY) {
     if (Math.abs(distX) > Math.abs(distY)) {
