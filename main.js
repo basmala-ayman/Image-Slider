@@ -25,6 +25,7 @@ for (let i = 0; i < imgPath.length; i++) {
     let img = document.createElement("img");
     img.src = imgPath[i];
     img.draggable = "false";
+    img.alt = `image- ${i + 1}`;
     slider.appendChild(img);
 }
 let images = document.querySelectorAll(".slider img");
