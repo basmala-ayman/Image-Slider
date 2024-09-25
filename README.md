@@ -2,6 +2,7 @@
 
 This project implements a simple image slider with interactive controls, allowing users to navigate through a series of images. The slider includes automatic transitions, manual navigation with buttons, pagination, and swipe functionality for touch screens.
 
+
 ### Files Overview
 
 - **index.html**  
@@ -14,7 +15,8 @@ This project implements a simple image slider with interactive controls, allowin
   Contains the core functionality of the slider. It:
     - Dynamically loads images into the slider.
     - Handles the automatic sliding of images every few seconds.
-    - Enables users to interact with the slider using next/previous buttons, pagination dots, and swipe gestures on touch devices.
+    - Allows users to interact with the slider using next/previous buttons, pagination dots, and swipe gestures on touch devices.
+    - **Pauses** the automatic transition when the user hovers over an image and **resumes** it when the mouse moves away.
   
 - **images/**  
   This folder holds the image files displayed in the slider.
@@ -26,6 +28,7 @@ The project displays a series of images as an interactive slider. Users can:
 - Manually navigate through images using the left (previous) and right (next) arrows.
 - Click on pagination dots to jump to a specific image.
 - Swipe left or right to move through images on touch devices.
+- Pause the automatic transition by hovering over an image, and resume it by moving the mouse away.
 
 The slider is responsive, meaning it adapts to different screen sizes and devices.
 
@@ -42,3 +45,6 @@ By default, the images will change automatically every 3.5 seconds. You don't ne
 
 ### 4. Swipe Gesture (for touch devices)
 - On touchscreens, you can swipe left or right to move through the images.
+
+### 5. Pause on Hover
+- If you hover over an image, the automatic transition will pause, allowing you to stay on that image. The slider resumes when you move the mouse away.
