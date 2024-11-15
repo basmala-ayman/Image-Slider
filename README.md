@@ -1,12 +1,16 @@
 # Image Slider Project
 
-This project implements a simple image slider with interactive controls, allowing users to navigate through a series of images. The slider includes automatic transitions, manual navigation with buttons, pagination, and swipe functionality for touch screens.
-
-
 ## Table of Contents
+- [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
 - [What Does the Project Do?](#what-does-the-project-do)
 - [How to Interact with the Slider](#how-to-interact-with-the-slider)
+
+---
+
+### [Project Overview](#project-overview)
+
+This project implements a simple image slider with interactive controls, allowing users to navigate through a series of images. The slider includes automatic transitions, manual navigation with buttons, pagination, and swipe functionality for touch screens.
 
 ---
 
