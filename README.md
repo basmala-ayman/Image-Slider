@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
-- [Technologies Used](#techonologies-used)
+- [Technologies Used](#technologies-used)
 - [What Does the Project Do?](#what-does-the-project-do)
 - [How to Interact with the Slider?](#how-to-interact-with-the-slider)
 
@@ -35,7 +35,7 @@ This project implements a simple image slider with interactive controls, allowin
 
 ---
 
-## [Technologies Used](#techonologies-used)
+## [Technologies Used](#technologies-used)
 
 - **HTML5**
 - **CSS3**
