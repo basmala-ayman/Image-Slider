@@ -4,7 +4,7 @@
 - [Project Overview](#project-overview)
 - [Project Structure](#project-structure)
 - [What Does the Project Do?](#what-does-the-project-do)
-- [How to Interact with the Slider](#how-to-interact-with-the-slider)
+- [How to Interact with the Slider?](#how-to-interact-with-the-slider)
 
 ---
 
@@ -47,7 +47,7 @@ The slider is responsive, meaning it adapts to different screen sizes and device
 
 ---
 
-## [How to Interact with the Slider](#how-to-interact-with-the-slider)
+## [How to Interact with the Slider?](#how-to-interact-with-the-slider)
 
 ### 1. Automatic Image Transition
 By default, the images will change automatically every 3.5 seconds. You don't need to do anything to start this; it happens when the page loads.
