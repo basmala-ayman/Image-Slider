@@ -8,6 +8,8 @@ This project implements a simple image slider with interactive controls, allowin
 - [What Does the Project Do?](#what-does-the-project-do)
 - [How to Interact with the Slider](#how-to-interact-with-the-slider)
 
+---
+
 ### [Project Structure](#project-structure)
 
 - **index.html**  
@@ -26,6 +28,8 @@ This project implements a simple image slider with interactive controls, allowin
 - **images/**  
   This folder holds the image files displayed in the slider.
 
+---
+
 ## [What Does the Project Do?](#what-does-the-project-do)
 
 The project displays a series of images as an interactive slider. Users can:
@@ -36,6 +40,8 @@ The project displays a series of images as an interactive slider. Users can:
 - Pause the automatic transition by hovering over an image, and resume it by moving the mouse away.
 
 The slider is responsive, meaning it adapts to different screen sizes and devices.
+
+---
 
 ## [How to Interact with the Slider](#how-to-interact-with-the-slider)
 
