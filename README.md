@@ -3,7 +3,12 @@
 This project implements a simple image slider with interactive controls, allowing users to navigate through a series of images. The slider includes automatic transitions, manual navigation with buttons, pagination, and swipe functionality for touch screens.
 
 
-### Files Overview
+## Table of Contents
+- [Project Structure](#project-structure)
+- [What Does the Project Do?](#what-does-the-project-do)
+- [How to Interact with the Slider](#how-to-interact-with-the-slider)
+
+### [Project Structure](#project-structure)
 
 - **index.html**  
   This file contains the basic structure of the web page and links to the CSS and JavaScript files. It includes the container for the image slider, navigation arrows, pagination controls, and the script to enable functionality.
@@ -21,7 +26,7 @@ This project implements a simple image slider with interactive controls, allowin
 - **images/**  
   This folder holds the image files displayed in the slider.
 
-## What Does the Project Do?
+## [What Does the Project Do?](#what-does-the-project-do)
 
 The project displays a series of images as an interactive slider. Users can:
 - View images that automatically transition at regular intervals.
@@ -32,7 +37,7 @@ The project displays a series of images as an interactive slider. Users can:
 
 The slider is responsive, meaning it adapts to different screen sizes and devices.
 
-## How to Interact with the Slider
+## [How to Interact with the Slider](#how-to-interact-with-the-slider)
 
 ### 1. Automatic Image Transition
 By default, the images will change automatically every 3.5 seconds. You don't need to do anything to start this; it happens when the page loads.
